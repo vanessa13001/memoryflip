@@ -55,6 +55,9 @@ function startLevel(level) {
   canClick = true;
 
   renderBoard();
+
+  // Reset scroll position à chaque nouveau niveau
+  board.scrollTop = 0;
 }
 
 // Créer le plateau avec les cartes

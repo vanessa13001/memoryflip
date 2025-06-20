@@ -1,20 +1,13 @@
-/* Ajoute un reset correct */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: auto;
-  min-height: 100%;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #282c34;
   color: white;
   text-align: center;
+  margin: 0;
   padding: 20px;
   user-select: none;
+  height: 100vh;       /* plein écran */
+  overflow-y: auto;    /* scroll vertical si besoin */
 }
 
 #menu {
@@ -37,24 +30,22 @@ body {
   background-color: #21a1f1;
 }
 
-#game {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Empêche le board de casser la hauteur */
 #game-board {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
   gap: 10px;
   justify-content: center;
   margin: 20px auto;
-  max-width: 100%;
+  width: 100%;
   padding: 10px;
   box-sizing: border-box;
+
+  max-height: 60vh;     /* Limite hauteur du plateau à 60% de la fenêtre */
+  overflow-y: auto;     /* Scroll vertical si dépassement */
+  border: 2px solid #61dafb; /* optionnel : visualiser la zone */
+  border-radius: 10px;
 }
 
-/* Garantit que les cartes prennent un carré */
 .card {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -106,7 +97,6 @@ body {
   font-size: 20px;
 }
 
-/* Style générique pour tous les boutons */
 button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -122,7 +112,7 @@ button:hover {
   background-color: #21a1f1;
 }
 
-/* Responsive tweaks */
+/* 👇 Responsive tweaks for very small devices */
 @media (max-width: 400px) {
   #level-buttons button,
   button {
@@ -133,11 +123,4 @@ button:hover {
   .card-front, .card-back {
     font-size: 1.8em;
   }
-}
-
-/* Ajoute un espace en bas pour éviter que le bouton touche le bord */
-body::after {
-  content: "";
-  display: block;
-  height: 60px;
 }
