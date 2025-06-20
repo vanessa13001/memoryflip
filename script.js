@@ -43,6 +43,10 @@ function startLevel(level) {
   status.textContent = 'Trouve toutes les paires !';
   levelTitle.textContent = `Niveau ${level}`;
 
+  // Ajout de la classe correspondant au niveau pour la grille
+  board.className = '';
+  board.classList.add(`level-${level}`);
+
   // Le nombre de paires augmente avec le niveau
   // Par ex : niveau 1 = 4 paires, niveau 6 = 12 paires
   let pairsCount = 4 + (level - 1) * 2;
@@ -55,9 +59,6 @@ function startLevel(level) {
   canClick = true;
 
   renderBoard();
-
-  // Reset scroll position à chaque nouveau niveau
-  board.scrollTop = 0;
 }
 
 // Créer le plateau avec les cartes
