@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeu Mémoire - 6 Niveaux</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="menu">
+    <h1>Jeu Mémoire</h1>
+    <p>Choisis un niveau (1 à 6) :</p>
+    <div id="level-buttons">
+      <button data-level="1">Niveau 1</button>
+      <button data-level="2">Niveau 2</button>
+      <button data-level="3">Niveau 3</button>
+      <button data-level="4">Niveau 4</button>
+      <button data-level="5">Niveau 5</button>
+      <button data-level="6">Niveau 6</button>
+    </div>
+  </div>
+
+  <div id="game" style="display:none;">
+    <h2 id="level-title"></h2>
+    <div id="game-board"></div>
+    <div id="status"></div>
+    <button id="next-level-btn" style="display:none;">Niveau suivant</button>
+    <button id="restart-btn">Recommencer ce niveau</button>
+    <button id="back-menu-btn">Retour au menu</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
