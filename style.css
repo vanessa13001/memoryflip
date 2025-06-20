@@ -1,13 +1,17 @@
-body {
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #282c34;
   color: white;
   text-align: center;
-  margin: 0;
-  padding: 20px;
+  overflow-y: auto; /* Scroll vertical sur la page entière */
   user-select: none;
-  height: 100vh;       /* plein écran */
-  overflow-y: auto;    /* scroll vertical si besoin */
+}
+
+body {
+  /* margin et padding déjà gérés ci-dessus */
 }
 
 #menu {
@@ -26,6 +30,7 @@ body {
   color: #282c34;
   transition: background-color 0.3s;
 }
+
 #level-buttons button:hover {
   background-color: #21a1f1;
 }
@@ -39,10 +44,12 @@ body {
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  
+  /* Scroll interne supprimé pour que ce soit la page qui défile */
+  /* max-height: 60vh; */
+  /* overflow-y: auto; */
 
-  max-height: 60vh;     /* Limite hauteur du plateau à 60% de la fenêtre */
-  overflow-y: auto;     /* Scroll vertical si dépassement */
-  border: 2px solid #61dafb; /* optionnel : visualiser la zone */
+  border: 2px solid #61dafb;
   border-radius: 10px;
 }
 
@@ -108,6 +115,7 @@ button {
   color: #282c34;
   transition: background-color 0.3s;
 }
+
 button:hover {
   background-color: #21a1f1;
 }
