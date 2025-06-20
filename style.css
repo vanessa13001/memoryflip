@@ -1,8 +1,11 @@
+/* Ajoute un reset correct */
 html, body {
-  height: auto;
-  overflow-y: auto;
   margin: 0;
   padding: 0;
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 body {
@@ -34,6 +37,12 @@ body {
   background-color: #21a1f1;
 }
 
+#game {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Empêche le board de casser la hauteur */
 #game-board {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
@@ -45,6 +54,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Garantit que les cartes prennent un carré */
 .card {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -96,6 +106,7 @@ body {
   font-size: 20px;
 }
 
+/* Style générique pour tous les boutons */
 button {
   margin-top: 10px;
   padding: 10px 20px;
@@ -111,7 +122,7 @@ button:hover {
   background-color: #21a1f1;
 }
 
-/* 👇 Responsive tweaks for very small devices */
+/* Responsive tweaks */
 @media (max-width: 400px) {
   #level-buttons button,
   button {
@@ -122,4 +133,11 @@ button:hover {
   .card-front, .card-back {
     font-size: 1.8em;
   }
+}
+
+/* Ajoute un espace en bas pour éviter que le bouton touche le bord */
+body::after {
+  content: "";
+  display: block;
+  height: 60px;
 }
